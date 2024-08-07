@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#companyModal">Company Info</button>    
+    <!-- Modal -->
+    <div class="modal fade" id="companyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Company Info</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <% if (locals.company) { %>
+            <p><b>Founder: </b><%= company.founder %></p>
+            <p><b>Founded: </b><%= company.founded %></p>
+            <p><b>Headquarters: </b><%= company.headquarters.address %>, <%= company.headquarters.city %>, <%= company.headquarters.state %></p>
+            <p><b>Employees: </b><%= company.employees %></p>
+            <p><b>Launch Sites: </b><%= company.launch_sites %></p>
+            <p><b>Valuation: </b><%= company.valuation %></p>
+            <p><b>Description: </b><%= company.summary %></p>
+            <% } %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>

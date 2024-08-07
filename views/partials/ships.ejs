@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shipModal">Ships Info</button>    
+    <!-- Modal -->
+    <div class="modal fade" id="shipModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Ships Info</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <% if (locals.ships) { for (var i = 0; i < ships.length; i++) { %>
+            <p><b>Name: </b><%= ships[i].name %></p>
+            <p><b>Type: </b><%= ships[i].type %></p>
+            <p><b>Roles: </b><%= ships[i].roles %></p>
+            <p><b>Home Port: </b><%= ships[i].home_port %></p>
+            <% if (i !== ships.length - 1) {%>
+                <hr>
+            <% } %>
+            <% }} %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crewModal">Crew Info</button>    
+    <!-- Modal -->
+    <div class="modal fade" id="crewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Crew Info</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <% if (locals.crew) { for (var i = 0; i < crew.length; i++) { %>
+            <p><b>Name: </b><%= crew[i].name %></p>
+            <p><b>Agency: </b><%= crew[i].agency %></p>
+            <p><b>Status: </b><%= crew[i].status %></p>
+            <% if (i !== crew.length - 1) {%>
+                <hr>
+            <% } %>
+            <% }} %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>

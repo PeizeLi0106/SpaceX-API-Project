@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rocketModal">Rockets Info</button>    
+    <!-- Modal -->
+    <div class="modal fade" id="rocketModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Rockets Info</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <% if (locals.rockets) { for (var i = 0; i < rockets.length; i++) { %>
+            <p><b>Name: </b><%= rockets[i].name %></p>
+            <p><b># of boosters: </b><%= rockets[i].boosters %></p>
+            <p><b>Date of first flight: </b><%= rockets[i].first_flight %></p>
+            <% if (i !== rockets.length - 1) {%>
+                <hr>
+            <% } %>
+            <% }} %>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+    </div>
